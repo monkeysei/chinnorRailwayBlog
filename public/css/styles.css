@@ -63,3 +63,8 @@ html {
   color: blueviolet;
   float:center;
 }
+
+.logo {
+  width: 60px;
+  height: auto;
+}

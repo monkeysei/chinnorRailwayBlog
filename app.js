@@ -12,6 +12,8 @@ app.set('view engine', 'ejs');
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(express.static("public"));
 
+// my blogs stored in an array
+let posts = [];
 
 app.get("/", function(req, res){
   res.render("home");
@@ -25,6 +27,42 @@ app.get("/contact", function(req, res){
   res.render("contact");
 });
 
+
+
+app.get("/blog", function(req, res){
+
+  posts = [];
+  // adding the posts one by one
+  let post = {
+    title: "My fantastic work experience at Chinnor Princes Risborough Railway.",
+    content: "I was looking for a place to do my Y10 work placement experience. Since I was a small child, I loved trains, especially Thomas the Tank Engine series. I went on many steam engine train rides including Chinnor Princes Risborough Railway and I hoped I could work for these trains for my work experience. As I read an article in Chinnor Pump about Chinnor Princes Risborough Railway looking for members of the engineering department, I decided to take a chance and applied to them. I was delighted to receive the positive answer and I started my “dream comes true” work experience from Monday 23rd May!  When I arrived on the first day, I was welcomed by Gavin, the Engineering Director, and Jeremy, the Engineering Director. They showed me around the yard and introduced me to the rest of the railway crew. They are all friendly and encourage me to try various aspects of locomotive engineering work. I spent the first day learning about the craft of train maintenance as I was placed under a locomotive to grease the train. I always wondered what it looked like under the locomotive, and it was amazing to see it with my own eyes. I learnt funny expressions like \“grease nipples\”! Tuesday onwards, I was given a variety of tasks from helping repair a part of a carriage, helping Gavin with rebuilding the miniature locomotive, examining the train they got recently to check if it is fit enough to run on the rails, fixing breaks of trains… There is so much to learn and it is very fun. I felt they treated me as a proper new crew member, teaching me and training me thoroughly. We talked about the theory of the examination of the trains, how train maintenance had changed over the years and also how train engineering had become a dying art. I was immersed in all the aspects of locomotive and railway work, from mechanical engineering, restoration to maintenance. I am surprised how much work is involved to keep this amazing legacy from the Victorian time, and I truly admire those who work on these locomotives. My teacher from school visited me on the site, and told me that my work experience is the most interesting one he had seen over years of his experience as a work experience coordinator. Their concern is that there are not many young people involved, and if the younger generation doesn’t step in, locomotive engineering will die out in the near future. They are building new miniature trains so that the younger generation will be able to learn the art of locomotives. They are offering weekly voluntary sessions for the youngsters to help out Chinnor Princes Risborough Railway, and I strongly recommend anyone to join us! It is so much fun, and you will become a part of history!",
+    published: "15th of June 2022"
+  };
+  posts.push(post);
+
+
+
+  res.render("blog", {
+    posts: posts
+    });
+});
+
+app.get("/posts/:postName", function(req, res){
+  const requestedTitle = _.lowerCase(req.params.postName);
+
+  posts.forEach(function(post){
+    const storedTitle = _.lowerCase(post.title);
+
+    if (storedTitle === requestedTitle) {
+      res.render("post", {
+        title: post.title,
+        content: post.content,
+        publishedDate: post.published
+      });
+    }
+  });
+
+});
 
 
 const port = process.env.PORT || 3000;
