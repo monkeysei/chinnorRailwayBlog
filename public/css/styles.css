@@ -47,3 +47,19 @@ html {
   margin-left: auto;
   margin-right: auto;
 }
+
+.homeImage {
+  width: 300px;
+  height: auto;
+  margin: 15px;
+  float: left;
+}
+
+.noFloat {
+  clear: both;
+}
+
+.homeText { 
+  color: blueviolet;
+  float:center;
+}
