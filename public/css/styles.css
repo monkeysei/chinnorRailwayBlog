@@ -79,8 +79,9 @@ html {
 }
 
 .homeText { 
-  color: blueviolet;
   float:center;
+  filter: brightness(1%);
+  font-weight: bold;
 }
 
 .logo {
