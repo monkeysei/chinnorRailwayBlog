@@ -27,6 +27,9 @@ app.get("/contact", function(req, res){
   res.render("contact");
 });
 
+app.get("/trivia", function(req, res){
+  res.render("trivia");
+});
 
 
 app.get("/blog", function(req, res){
