@@ -46,7 +46,13 @@ app.get("/blog", function(req, res){
   post= {
     title: "Join the gang",
     content: "In last month’s Chinnor Pump, I wrote about my work placement experience at Chinnor and Princes Risborough Railway. I had become a junior member of the Railway since and go to young volunteer’s workshops on Saturdays. My best friend, who shares the same passion for trains and mechanical engineering, joined me all the way from Didcot, saying the experience CPRR offers is far more interesting than the one in Didcot Railway Centre. If you become a member, you will receive not only a beautiful membership card, but also a cool high-vis vest with CPRR Logo on. We are going to focus on building a miniature railway from July. It is a big project for us, but we are really excited! Best of all, the crew are so friendly and have a great sense of humour; they are planning to make a team t-shirt saying \“Bob the builder can we fix it? No, it’s fucked!\”. I can’t wait to see that (;>v<;) So please join us! The more the merrier!",
-    published: "1st of July 2022"
+    published: "1st July 2022"
+  };
+  posts.push(post);
+  post= {
+    title: "History of railway station",
+    content: "Chinnor railway station in Oxofrdshire is on the line of the former Watlington and Princes Risborough Railway. First opened in 1872 to serve Chinnor and the surrounding villages, the line was projected to be extended to Wallingford, where it would complete a cross-country line between Chosley and Princes Risborough. However, due to financial difficulties the Watlington - Wallingford section was never built. The line was always single track. British Railways closed the Watlington and Princes-Risborough Railway to passengers in 1957 and to goods in 1961. The station was demolished but the section of line between Princes Risborough and Chinnor remained open forcement traffic until 1989. Th station was reopened by the Chinnor and Princes Risborough Railway Association in 1994 and after a period of disuse. A new station was built by local contractors. Access to the station is now from the south side of the tracks compared to the original layout. there is A large car park on this side,  the extension only opened for special events. Opened:- 15th August 1872 Closed to passengers :- 1 July 1957 Closeed to Freight :- 1961  Closaed to cement traffic :- 1989 Reopened :- 20 August 1994 Bibliography Country Branch Line: portrait of the Watlington branch. Vols. 1&2 / Wild Swan 1998 Lost Railways of the Chiltern, Leslie Oppitz / Countryside Books 2000 ",
+    published: "20th of August 2022"
   };
   posts.push(post);
 
